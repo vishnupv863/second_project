@@ -5,15 +5,20 @@ import {movieIndex,
         movieUpdator, 
         movieDeletor} from '../controllers/movie.controllers.js'
 
-const app = express.Router();
+const router = express.Router();
 
-app.get('/', movieIndex);
-
-
-app.post('/', movieCreator);
+router.get('/', movieIndex);
 
 
-app.put('/:id', movieUpdator);
+router.get('/:id', singleMovie);
 
 
-app.delete('/:id', movieDeletor);
+router.post('/', movieCreator);
+
+
+router.put('/:id', movieUpdator);
+
+
+router.delete('/:id', movieDeletor);
+
+export default router;
